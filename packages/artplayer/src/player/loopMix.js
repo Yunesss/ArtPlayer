@@ -8,11 +8,7 @@ export default function loopMix(art) {
             if (Array.isArray(value) && typeof value[0] === 'number' && typeof value[1] === 'number') {
                 const start = clamp(value[0], 0, Math.min(value[1], art.duration));
                 const end = clamp(value[1], start, art.duration);
-                if (end - start >= 1) {
-                    interval = [start, end];
-                } else {
-                    interval = [];
-                }
+                interval = [start, end];
             } else {
                 interval = [];
             }
